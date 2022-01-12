@@ -6,7 +6,6 @@ import java.time.Duration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.junit.jupiter.api.condition.EnabledOnJre;
@@ -29,9 +28,10 @@ class IndexControllerTest implements ControllerTests{
 	@DisplayName("Test Proper View name is returned for index page")
 	@Test
 	void testIndex() {
-		assertEquals("index", controller.index(),"Vista retornada erroena");
-		
+
+		assertEquals("index", controller.index(),"Vista retornada erronea");
 		assertThat(controller.index()).isEqualTo("index");
+		
 	}
 
 	@DisplayName("Test exception")
@@ -63,14 +63,14 @@ class IndexControllerTest implements ControllerTests{
 	@Test
 	void testAssumptionTrue() {
 		
-		assumeTrue("GURU".equalsIgnoreCase(System.getenv("GURU_RUNTIME")));
+		assumeTrue("kikec".equalsIgnoreCase(System.getenv("USERNAME")));
 
 	}
 	
 	@Test
 	void testAssumptionTrueAssumptionTrue() {
 		
-		assumeTrue("GURU".equalsIgnoreCase(System.getenv("GURU")));
+		assumeTrue("kike".equalsIgnoreCase(System.getenv("USERNAME")));
 
 	}
 	
@@ -98,9 +98,9 @@ class IndexControllerTest implements ControllerTests{
 		
 	}
 	
-	@EnabledIfEnvironmentVariable(named = "USER",matches = "jt")
+	@EnabledIfEnvironmentVariable(named = "SESSIONNAME",matches = "Console")
 	@Test
-	void testIFUserJT() {
+	void testSessionName() {
 		
 	}
 	
